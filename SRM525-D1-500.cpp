@@ -1,3 +1,10 @@
+/*
+Notice the constraints are small
+this is optimization problem
+We try to spread both the rumors all possible combinations 2^16 total combinations
+Now update the known table in N*N
+If finally number of days requires is infinite (here 20) answer is -1
+*/
 #include <bits/stdc++.h>
 #define fo(i,n) for(i=0;i<n;++i)
 #define forr(i,n) for(i=n-1;i>=0;--i)
