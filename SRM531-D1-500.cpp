@@ -34,25 +34,15 @@ struct MonsterFarm
 		memset(outdeg, 0, sizeof(outdeg));
 
 		for(int i = 0; i < n; ++i){
-			string tempstring = "";
-			for(int j = 0; j < transforms[i].length(); ++j){
-				if(transforms[i][j] == ' '){
-					x = stoi(tempstring);
-					outdeg[i]++;
-					reachable[i][x - 1] = true;
-					adj[i][x - 1]++;
-					tempstring = "";
-				}
-				else{
-					tempstring.push_back(transforms[i][j]);
-				}
+			stringstream st;
+			st << transforms[i];
+			while(st >> x){
+				outdeg[i]++;
+				adj[i][x - 1]++;
+				reachable[i][x - 1] = true;
 			}
-			x = stoi(tempstring);
-			outdeg[i]++;
-			adj[i][x - 1]++;
-			reachable[i][x - 1] = true;
 		}
-
+		
 		for(int k = 0; k < n; ++k){
 			for(int i = 0; i < n; ++i){
 				for(int j = 0; j < n; ++j){
