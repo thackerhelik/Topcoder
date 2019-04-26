@@ -1,7 +1,9 @@
 /*(Approach same as editorial)
 We can place a 0 at kth bit by taking even numbers of 2^k and 1 by taking odd number.
 solve from the smallest bit and carry over the rest
-if we are taking even number then we can carry over value/2
+if we are taking even number then we can carry over value/2. WHY? Because if I take 0 2^k then I can put rest as 2^(k + 1) but if take 2 then only (value - 2)/2 go to 2^(k + 1) but then there is carry over so add 1
+in general if i take 2k from value and carry over (value - 2k)/2 then it becomes 2k/2 k as carry over to next bit and add it to value/2 - k it becomes value/2
+(THIS IS THE MAIN AND NICE OBSERVATION)
 and if we are taking odd number then we carry over (value - 1)/2
 */
 #include <bits/stdc++.h>
